@@ -43,7 +43,192 @@
             <div class="bg-circle-2 bg-circle"></div>
             <div class="bg-circle-3 bg-circle"></div>
             <div class="bg-circle-4 bg-circle"></div>
+
+            <button ondblclick="log_console()">click</button>
         </header>
+
+        <script>
+
+            var age = parseInt(prompt ("How old are you?"));
+            var income = parseInt(prompt("What is your yearly income?"));
+            var investing = prompt ("Do you plan on investing? (yes/no)");
+
+            var percentage_investing = 0;
+
+            if (investing == "yes"){
+                var years_investing = parseInt(prompt ("In how many years do you plan to start investing? (If you already invest just put 0)"));
+                percentage_investing = prompt ("What is the percentage you are planning to invest? (__%)");
+                percentage_investing = parseFloat(percentage_investing);
+                percentage_investing = percentage_investing/(100.00);
+            }
+            else{
+                percentage_investing = 0.1;
+            }
+
+            console.log(percentage_investing);
+
+            var savings = 0;
+            var savings_inv = 0;
+            var underage=0;
+            var n=0;
+            var living_cost = 38266;
+
+            
+
+            if (age < 18){
+                document.write("Because you are underage we are considering that your parents pay your living costs until you are 18. <br>");
+                underage = 1;
+                while (age < 18){
+                    savings = savings + income;
+                    age = age+1;
+                    n=n+1;
+                }
+            }
+
+
+            //in case someone's income is lower than the living cost
+            if (income < living_cost){
+                income = 38266 + 3826.6;
+                document.write("Your current income is lower than the value we are using for cost of living, so we are changing it for 110% of the cost of living, meaning it is ", income," dollars. <br>");
+            }
+            
+
+
+            if (underage == 1){
+                if (investing =="yes"){
+                    if (years_investing < n){ //error control
+                        document.write("Sorry, you can only start investing when you are over 18. <br>");
+                        console.log(age);
+                        const returning = investment(age, savings, income, living_cost, percentage_investing);
+                        document.write("When you retire you will have ", returning[0]+returning[1], " dollars if you invested in savings and ", returning[0]+returning[2], " if you invested in stocks, assuming you started when you turned 18 <br>");
+                        //disp(display);
+                        document.write("This is very good considering that you would only have ",returning[0]," dollars if you didn't invest. <br>");
+                        //disp(display2);
+                    }
+                    else if (years_investing == n){ //same as starting now for adults
+                        const returning = investment(age, savings, income, living_cost, percentage_investing);
+                        document.write("When you retire you will have ", returning[0]+returning[1], " dollars if you invested in savings and ", returning[0]+returning[2], " if you invested in stocks. <br>");
+                        //disp(display);
+                        document.write("This is very good considering that you would only have ",returning[0]," dollars if you didn't invest. <br>");
+                        //disp(display2);
+                    }
+                    else{ //investing later
+                        const returning =investment((age+years_investing), savings, income, living_cost, percentage_investing);
+                        document.write("When you retire you will have ", returning[0]+returning[1], " dollars if you invest in savings and ", returning[0]+returning[2], " if you invest in stocks. <br>");
+                        //disp(display);
+                        document.write("This is very good considering that you would only have ",returning[0]," dollars if you didn't invest. <br>");
+                        //disp(display2);
+                        const returning2 =investment((age), savings, income, living_cost, percentage_investing);
+                        document.write("However, if you started investing now you would have ", returning2[0]+returning2[1], " dollars if you invested in savings and ", returning2[0]+returning2[2], " if you invested in stocks. <br>");
+                        //disp(display3);
+                    }
+                }
+                else{ //not investing
+                    const returning =investment(age, savings, income, living_cost, percentage_investing);
+                    document.write("When you retire you will have ", returning[0], " dollars from working. <br>");
+                    //disp(display);
+                    document.write("However, if you invested you would have had an extra of ", returning[1], " dollars if you invest in a savings account and an extra of ", returning[2], " dollars if you invest in stocks. <br>");
+                    //disp(display2);
+                }
+            }
+                
+            else{
+                if (investing =="yes"){
+                    if (years_investing == 0){ //investing now
+                        const returning =investment(age, savings, income, living_cost, percentage_investing);
+                        document.write("When you retire you will have ", returning[0]+returning[1], " dollars if you invest in savings and ", returning[0]+returning[2], " if you invest in stocks. <br>");
+                        //disp(display);
+                        document.write("This is very good considering that you would only have ",returning[0]," dollars if you didn't invest. <br>");
+                        //disp(display2);
+                    }
+                    else{ //investing later
+                        const returning =investment(age+years_investing, savings, income, living_cost, percentage_investing);
+                        document.write("When you retire you will have ", returning[0]+returning[1], " dollars if you invest in savings and ", returning[0]+returning[2], " if you invest in stocks. <br>");
+                        //disp(display);
+                        document.write("This is very good considering that you would only have ",returning[0]," dollars if you didn't invest. <br>");
+                        //disp(display2);
+                        const returning2=investment(age, savings, income, living_cost, percentage_investing);
+                        document.write("However, if you started investing now you would have ", returning2[0]+returning2[1], " dollars if you invested in savings and ", returning2[0]+returning2[2], " if you invested in stocks. <br>");
+                        //disp(display3);
+                    }
+                }
+                else{ //not investing
+                    const returning =investment(age, savings, income, living_cost, percentage_investing);
+                    document.write("When you retire you will have ", returning[0], " dollars from working. <br>");
+                    //disp(display);
+                    document.write("However, if you invested you would have had an extra of ", returning[1], " dollars if you invested in a savings account and an extra of ", returning[2], " dollars if you invested in stocks. <br>");
+                    //disp(display2);
+                }
+            }
+
+
+            /*Source 
+            https://www.worlddata.info/america/usa/inflation-rates.php#:~:text=During%20the%20observation%20period%20from,year%20inflation%20rate%20was%206.4%25. 
+            https://www.investopedia.com/articles/personal-finance/090415/salary-secrets-what-considered-big-raise.asp
+            https://www.upwardli.com/resources/new-to-america-what-is-the-average-monthly-cost-of-living-in-usa#:~:text=The%20average%20monthly%20living%20expenses,which%20is%20%2485%2C139%20per%20year.
+            https://www.dol.gov/general/topic/wages/minimumwage#:~:text=The%20federal%20minimum%20wage%20for,of%20the%20two%20minimum%20wages.
+            https://www.bankrate.com/banking/savings/average-savings-interest-rates/#:~:text=National%20average%20savings%20account%20interest,ll%20earn%20on%20your%20savings.
+            */
+
+
+
+
+
+            //calculating the amount of money on your savings when you retire
+            function investment(age, savings, income, living_cost, percentage_investing){
+                var age2 = age;
+                var savings2 = savings;
+                var income2 = income;
+                var living_cost2 = living_cost;
+                
+
+                var age3 = age;
+                var savings3 = savings;
+                var income3 = income;
+                var living_cost3 = living_cost;
+                
+                
+
+                //no investments
+                while (age <= 65){
+                
+                    savings = savings + income - living_cost;
+                    
+                    income = income*1.03;
+                    living_cost = living_cost *1.038;
+                    age = age + 1; 
+                }
+                //investment in savings account (0.3% per year)
+                while (age2 <= 65){
+                
+                    savings2 = (savings2*1.003) + (income2*percentage_investing);
+                
+                    income2 = income2*1.03;
+                    living_cost2 = living_cost2 *1.038;
+                    age2 = age2 + 1; 
+                }
+                //investment in stocks (10% per year)
+            while (age3 <= 65){
+                
+                savings3 = savings3*1.1 + (income3*percentage_investing);
+                
+                income3 = income3*1.03;
+                living_cost3 = living_cost3 *1.038;
+                age3 = age3 + 1; 
+            }
+
+            savings = parseInt(savings);
+            savings2 = parseInt(savings2);
+            savings3 = parseInt(savings3);
+
+            const returning=[savings, savings2, savings3];
+            console.log(returning);
+
+            return returning;
+            }
+
+
+        </script>
 
         <!-- Footer-->
         <footer class="py-5 bg-black">
