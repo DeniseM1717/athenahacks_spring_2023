@@ -12,7 +12,7 @@ var quizJSON = {
         "level3":  {"title": "Bloomberg", "descShort":"Mike Bloomberg", "descLong":"I keep on applying for Bloomberg internships just so I can talk to Mike.", image: "result-Bloomberg.jpeg", rangeStart: 13, rangeEnd: 18},
         "level4":  {"title": "Bill", "descShort":"Bill Gates",  "descLong":"I'm typing this on Mac, but I still love your Windows.", image: "result-Bill.jpeg", rangeStart: 19, rangeEnd: 24},
         "level5":  {"title": "Elon", "descShort":"Elon Musk",  "descLong":"If you need child name ideas, just Google Elon Musk.", image: "result-Elon.jpeg", rangeStart: 25, rangeEnd: 30},
-        "level6":  {"title": "Bernard", "descShort":"Bernard Arnault",  "descLong":"Owner of Louis Vuitton and Tiffany?? All I know is that Adams Driver's performance in House of Gucci was fantastic.", image: "result-Bernard.jpeg", rangeStart: 31, rangeEnd: 35} // no comma here// no comma here
+        "level6":  {"title": "Bernard", "descShort":"Bernard Arnault",  "descLong":"Owner of Louis Vuitton and Tiffany?? All I know is that Adams Driver's performance in House of Gucci was fantastic.", image: "result-Bernard.jpg", rangeStart: 31, rangeEnd: 36} // no comma here// no comma here
         }
     },
     "questions": [
@@ -44,7 +44,7 @@ var quizJSON = {
                 {"option": "Cheetos",           "correct": true, "value":"1", "image": "quiz-thumbimg-island1.jpg"},
                 {"option": "Sun screen",                  "correct": true, "value":"2", "image": "quiz-thumbimg-island2.jpg"},
                 {"option": "Water",  "correct": true, "value":"3", "image": "quiz-thumbimg-island3.jpg"},
-                {"option": "Gun",          "correct": true, "value":"5", "image": "quiz-thumbimg-island4.jpg"},
+                {"option": "Shovel",          "correct": true, "value":"5", "image": "quiz-thumbimg-island4.jpg"},
 				{"option": "Books",  "correct": true, "value":"4", "image": "quiz-thumbimg-island5.jpg"},	
 				{"option": "Pet",          "correct": true, "value":"0", "image": "quiz-thumbimg-island6.jpg"}// no comma here
             ],
