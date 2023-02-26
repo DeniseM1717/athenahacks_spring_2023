@@ -177,6 +177,10 @@ ol,
 ul {
   padding-left: 2rem;
 }
+th, td {
+  padding: 20px;
+  text-align: left;
+}
 
 ol,
 ul,
