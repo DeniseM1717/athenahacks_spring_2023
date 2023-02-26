@@ -7,12 +7,12 @@ var quizJSON = {
         "main":    "",
         "results": "<h5>Learn More</h5><p>Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris vel neque sit amet nunc gravida congue sed sit amet purus.</p>",
         levels:{
-        "level1":  {"title": "Rihanna", "descShort":"Rihana", "descLong":"Good job performing in the Superbowl! I purchased that Fenty powder myself.", image: "result-Rihanna.jpeg", rangeStart: 0, rangeEnd: 5 },
-        "level2":  {"title": "Oprah", "descShort":"Oprah Winfrey", "descLong":"Now that you're rich and famous, do I get a car too?", image: "result-Oprah.jpeg", rangeStart: 6, rangeEnd: 11},
-        "level3":  {"title": "Bloomberg", "descShort":"Mike Bloomberg", "descLong":"I keep on applying for Bloomberg internships just so I can talk to Mike.", image: "result-Bloomberg.jpeg", rangeStart: 12, rangeEnd: 17},
-        "level4":  {"title": "Bill", "descShort":"Bill Gates",  "descLong":"I'm typing this on Mac, but I still love your Windows.", image: "result-Bill.jpeg", rangeStart: 18, rangeEnd: 23},
-        "level5":  {"title": "Elon", "descShort":"Elon Musk",  "descLong":"If you need child name ideas, just Google Elon Musk.", image: "result-Elon.jpeg", rangeStart: 24, rangeEnd: 29},
-        "level6":  {"title": "Bernard", "descShort":"Bernard Arnault",  "descLong":"Owner of Louis Vuitton and Tiffany?? All I know is that Adams Driver's performance in House of Gucci was fantastic.", image: "result-Bernard.jpeg", rangeStart: 30, rangeEnd: 35} // no comma here// no comma here
+        "level1":  {"title": "Rihanna", "descShort":"Rihana", "descLong":"Good job performing in the Superbowl! I purchased that Fenty powder myself.", image: "result-Rihanna.jpeg", rangeStart: 0, rangeEnd: 7 },
+        "level2":  {"title": "Oprah", "descShort":"Oprah Winfrey", "descLong":"Now that you're rich and famous, do I get a car too?", image: "result-Oprah.jpeg", rangeStart: 8, rangeEnd: 14},
+        "level3":  {"title": "Bloomberg", "descShort":"Mike Bloomberg", "descLong":"I keep on applying for Bloomberg internships just so I can talk to Mike.", image: "result-Bloomberg.jpeg", rangeStart: 15, rangeEnd: 21},
+        "level4":  {"title": "Bill", "descShort":"Bill Gates",  "descLong":"I'm typing this on Mac, but I still love your Windows.", image: "result-Bill.jpeg", rangeStart: 22, rangeEnd: 28},
+        "level5":  {"title": "Elon", "descShort":"Elon Musk",  "descLong":"If you need child name ideas, just Google Elon Musk.", image: "result-Elon.jpeg", rangeStart: 29, rangeEnd: 35},
+        "level6":  {"title": "Bernard", "descShort":"Bernard Arnault",  "descLong":"Owner of Louis Vuitton and Tiffany?? All I know is that Adams Driver's performance in House of Gucci was fantastic.", image: "result-Bernard.jpeg", rangeStart: 36, rangeEnd: 42} // no comma here// no comma here
         }
     },
     "questions": [
